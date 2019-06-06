@@ -1,0 +1,38 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+html {
+    background-color: #f7f7f7;
+    padding: 0 10px;
+}
+
+body {
+    color: #333;
+    font-family: "Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;";
+    max-width: 1000px;
+    min-height: 369px;
+    margin: 60px auto;
+    background-color: #ffffff;
+}
+
+@media screen and (max-width: 1600px) {
+    body {
+        max-width: 900px;
+        min-height: 369px;
+        margin: 60px auto;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        min-height: 369px;
+        margin: 20px auto;
+    }
+}
+
+a {
+    text-decoration: none;
+}
