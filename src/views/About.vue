@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <img :src="data.avatar"/>
+    <img :src="data.avatar">
     <button @click="getData">测试</button>
     <p>{{data}}</p>
   </div>
@@ -23,7 +23,7 @@ export default {
           api_token: "d04ba5c20c1a47e59548a92aef08f3f1"
         })
         .then(res => {
-          console.log(res, 66666);
+          console.log(res, 33333);
           this.data = res.data;
         })
         .catch(err => {
