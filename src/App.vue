@@ -1,17 +1,20 @@
 <template>
-  <div id="app" class="container">
-    <div id="nav">
-      <Menu/>
-      <Header/>
+  <div id="app">
+    <div class="main">
+      <div id="nav">
+        <Menu/>
+        <!-- <Header/> -->
+      </div>
+      <router-view/>
     </div>
-    <router-view/>
+    <div style="text-align:center;font-size:0.8rem">Designed by zuke, Proudly published with Halo</div>
   </div>
 </template>
 <script>
 import Menu from "@/components/Menu";
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 export default {
-  components: { Menu, Header }
+  components: { Menu }
 };
 </script>
 
