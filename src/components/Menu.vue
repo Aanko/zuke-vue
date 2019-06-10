@@ -7,6 +7,7 @@
         </div>
         <div class="head">
             <img :src="userData.avatar" class="head-img" />
+            <span class="username">{{userData.nickname}}</span>
         </div>
     </div>
 </template>
@@ -68,10 +69,17 @@
         align-items: center;
     }
 
+    .head {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
     /* 头像 */
     .head-img {
         width: 30px;
         height: 30px;
+        margin-right: 0.5rem;
         border-radius: 15px;
     }
 
@@ -79,5 +87,15 @@
         margin-right: 0.5rem;
         font-size: 0.9rem;
         color: #424242;
+    }
+
+    .username {
+        line-height: 30px;
+    }
+
+    @media screen and (max-width: 900px) {
+        .username {
+            display: none;
+        }
     }
 </style>
