@@ -1,12 +1,13 @@
 <template>
     <div class="menu">
         <div class="nav">
-            <router-link :to="item.url" class="navname" v-for="(item,index) in menuData" :key="index">
+            <router-link :to="item.url" class="navname" v-for="(item,index) in menuData" v-if="ishow" :key="index">
                 {{item.name}}
             </router-link>
+            <i class="fa fa-paperclip" @click="changeIshow"></i>
         </div>
-        <div class="head">
-            <img :src="userData.avatar" class="head-img" />
+        <div class="head" @click="headModel">
+            <img :src="userData.avatar" class="head-img">
             <span class="username">{{userData.nickname}}</span>
         </div>
     </div>
@@ -19,7 +20,8 @@
         data() {
             return {
                 menuData: [],
-                userData: '',
+                userData: "",
+                ishow: true
             };
         },
         created() {
@@ -27,6 +29,9 @@
             this.getUserData();
         },
         methods: {
+            changeIshow() {
+                this.ishow = !this.ishow;
+            },
             getMenu() {
                 fetch
                     .get("/menus", {
@@ -52,6 +57,9 @@
                     .catch(err => {
                         console.log(err);
                     });
+            },
+            headModel() {
+                alert("66666");
             }
         }
     };

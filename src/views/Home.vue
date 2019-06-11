@@ -3,16 +3,23 @@
     <div v-for="(item,index) in data" :key="index" class="postlist">
       <a :href="item.url" class="postitle">{{item.title}}</a>
       <p class="postsummary">{{item.summary}}</p>
-      <div>
-        <span class="posttime">2019-6-10</span>
-        <span></span>
+      <div class="postfooter">
+        <div class="time">
+          <i class="fa fa-sun-o posttime"></i>
+          <span class="posttime">2019-6-10</span>
+        </div>
+        <div class="tag">
+          <i class="fa fa-tags posttag"></i>
+          <span class="posttag">Vue Android</span>
+        </div>
       </div>
     </div>
-    <div v-html="Tagadata">{{Tagadata}}</div>
+    <!-- <p v-html="Tagadata">{{Tagadata}}</p> -->
   </div>
 </template>
 
 <script>
+// 首页
 import { fetch } from "../util/service";
 export default {
   name: "home",
@@ -61,18 +68,37 @@ export default {
 .postlist {
   margin: 1rem 1rem;
   padding: 1rem 0rem;
-  border-bottom: 1px solid #f3f3f3;
+  border-bottom: 0.8px solid #f3f3f3;
 }
+/* .postlist :hover {
+  box-shadow: 0rem 0rem 0.4rem 0rem rgba(68, 68, 68, 0.25);
+} */
 .postitle {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  font-weight: 650;
 }
 .postsummary {
-  font-size: 1rem;
+  font-size: 0.8rem;
   margin: 1rem 0rem;
+  /* letter-spacing: 0.1rem; */
+  color: #272727;
+}
+.postfooter {
+  display: flex;
+  flex-direction: row;
 }
 .posttime {
   color: #bbbbbb;
-  font-size: 0.8rem;
+  margin-right: 0.2rem;
+  font-size: 0.6rem;
+}
+.posttag {
+  color: #bbbbbb;
+  margin-right: 0.2rem;
+  font-size: 0.6rem;
+}
+.tag {
+  margin: 0 1rem;
 }
 </style>

@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 //导入公共资源文件
 import './assets/css/common.css'
+import 'font-awesome/css/font-awesome.min.css' 
 import './assets/js/common.js'
 Vue.config.productionTip = false
 

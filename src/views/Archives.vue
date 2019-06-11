@@ -7,6 +7,7 @@
   </div>
 </template>
 <script>
+// 归档页面
 import { fetch } from "../util/service";
 export default {
   data() {
