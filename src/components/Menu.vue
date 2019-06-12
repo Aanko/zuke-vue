@@ -4,7 +4,9 @@
             <router-link :to="item.url" class="navname" v-for="(item,index) in menuData" v-if="ishow" :key="index">
                 {{item.name}}
             </router-link>
-            <i class="fa fa-paperclip" @click="changeIshow"></i>
+            <a href="#">
+                <i class="fa fa-paperclip" @click="changeIshow"></i>
+            </a>
         </div>
         <div class="head" @click="headModel">
             <img :src="userData.avatar" class="head-img">
@@ -69,7 +71,6 @@
     .menu {
         height: 88px;
         padding: 0 1rem;
-        border-bottom: solid 0.5px rgba(68, 68, 68, 0.25);
         display: -webkit-flex;
         /* Safari */
         display: flex;
@@ -105,5 +106,17 @@
         .username {
             display: none;
         }
+
+        .menu {
+            height: 88px;
+            padding: 0 1rem;
+            border-bottom: solid 0.5px rgba(68, 68, 68, 0.25);
+            display: -webkit-flex;
+            /* Safari */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
     }
 </style>

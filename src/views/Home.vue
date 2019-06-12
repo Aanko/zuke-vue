@@ -74,15 +74,25 @@ export default {
   box-shadow: 0rem 0rem 0.4rem 0rem rgba(68, 68, 68, 0.25);
 } */
 .postitle {
-  font-size: 1rem;
-  letter-spacing: 0.1rem;
+  font-size: 1.4rem;
   font-weight: 650;
 }
 .postsummary {
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin: 1rem 0rem;
-  /* letter-spacing: 0.1rem; */
+  letter-spacing: 0.1rem;
   color: #272727;
+}
+@media screen and (max-width: 900px) {
+  .postitle {
+    font-size: 1rem;
+    font-weight: 650;
+  }
+  .postsummary {
+    font-size: 0.8rem;
+    margin: 1rem 0rem;
+    color: #272727;
+  }
 }
 .postfooter {
   display: flex;
