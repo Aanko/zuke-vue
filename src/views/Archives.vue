@@ -22,7 +22,7 @@ export default {
     getData() {
       fetch
         .get("/archives/years", {
-          api_token: "d04ba5c20c1a47e59548a92aef08f3f1"
+          api_token: "776eb0f0212c42858cf4abfc2fe1ef2f"
         })
         .then(res => {
           console.log(res, 33333);
