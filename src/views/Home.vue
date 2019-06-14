@@ -38,7 +38,7 @@ export default {
     getData() {
       fetch
         .get("/posts", {
-          api_token: "776eb0f0212c42858cf4abfc2fe1ef2f"
+          api_access_key: "776eb0f0212c42858cf4abfc2fe1ef2f"
         })
         .then(res => {
           console.log(res, 33333);
@@ -51,7 +51,7 @@ export default {
     getTags() {
       fetch
         .get("/posts/5", {
-          api_token: "776eb0f0212c42858cf4abfc2fe1ef2f"
+          api_access_key: "776eb0f0212c42858cf4abfc2fe1ef2f"
         })
         .then(res => {
           console.log(res, 66668988989);

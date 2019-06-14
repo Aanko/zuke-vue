@@ -37,7 +37,7 @@
             getMenu() {
                 fetch
                     .get("/menus", {
-                        api_token: "776eb0f0212c42858cf4abfc2fe1ef2f"
+                        api_access_key: "776eb0f0212c42858cf4abfc2fe1ef2f"
                     })
                     .then(res => {
                         console.log(res, 66666);
@@ -50,7 +50,7 @@
             getUserData() {
                 fetch
                     .get("/users/profile", {
-                        api_token: "776eb0f0212c42858cf4abfc2fe1ef2f"
+                        api_access_key: "776eb0f0212c42858cf4abfc2fe1ef2f"
                     })
                     .then(res => {
                         console.log(res, 66666);
