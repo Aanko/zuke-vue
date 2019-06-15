@@ -6,7 +6,7 @@
       </div>
       <router-view/>
     </div>
-    <div style="text-align:center;font-size:0.8rem;margin:20px 0;">Designed by Halo, Proudly published with Halo</div>
+    <div style="text-align:center;font-size:0.8rem;margin:20px 0;">Designed by zuke, Proudly published with Halo</div>
   </div>
 </template>
 <script>

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div v-for="(item,index) in data" :key="index" class="postlist">
+    <div v-for="(item,index) in postsData" :key="index" class="postlist">
       <a :href="item.url" class="postitle">{{item.title}}</a>
       <p class="postsummary">{{item.summary}}</p>
       <div class="postfooter">
@@ -25,8 +25,7 @@ export default {
   components: {},
   data() {
     return {
-      data: [],
-      Tagadata: {}
+      postsData: []
     };
   },
   created() {
@@ -36,7 +35,7 @@ export default {
     getPostsData() {
       getPosts()
         .then(res => {
-          this.data = res.data.content;
+          this.postsData = res.data.content;
           console.log(res, 111);
         })
         .catch(err => {
