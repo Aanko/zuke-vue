@@ -15,8 +15,18 @@ const routes = [
     path: '/archives',
     name: 'Archives',
     component: () => import('./views/Archives.vue')
-  }
-]
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('./views/About.vue')
+  },
+  {
+    path: '/links',
+    name: 'Link',
+    component: () => import('./views/Links.vue')
+  },
+] 
 
 export default new Router({
   mode: 'history',

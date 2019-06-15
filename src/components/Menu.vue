@@ -8,7 +8,7 @@
                 <i class="fa fa-paperclip" @click="changeIshow"></i>
             </a>
         </div>
-        <div class="head" @click="headModel">
+        <div class="head">
             <img :src="userData.avatar" class="head-img">
             <span class="username">{{userData.nickname}}</span>
         </div>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-    import { fetch } from "../util/service";
+    import { getUserProfile, getMenus } from "../util/api";
     export default {
         name: "Menu",
         data() {
@@ -35,34 +35,19 @@
                 this.ishow = !this.ishow;
             },
             getMenu() {
-                fetch
-                    .get("/menus", {
-                        api_access_key: "776eb0f0212c42858cf4abfc2fe1ef2f"
-                    })
-                    .then(res => {
-                        console.log(res, 66666);
-                        this.menuData = res.data.reverse();
-                    })
-                    .catch(err => {
-                        console.log(err);
-                    });
+                getMenus().then(res => {
+                    this.menuData = res.data.reverse();
+                }).catch(err => {
+                    console.log(err);
+                })
             },
             getUserData() {
-                fetch
-                    .get("/users/profile", {
-                        api_access_key: "776eb0f0212c42858cf4abfc2fe1ef2f"
-                    })
-                    .then(res => {
-                        console.log(res, 66666);
-                        this.userData = res.data;
-                    })
-                    .catch(err => {
-                        console.log(err);
-                    });
+                getUserProfile().then(res => {
+                    this.userData = res.data;
+                }).catch(err => {
+                    console.log(err);
+                })
             },
-            headModel() {
-                alert("66666");
-            }
         }
     };
 </script>

@@ -25,7 +25,7 @@ export default {
           api_access_key: "776eb0f0212c42858cf4abfc2fe1ef2f"
         })
         .then(res => {
-          console.log(res, 33333);
+          console.log(res, 5555);
           this.data = res.data;
         })
         .catch(err => {

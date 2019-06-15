@@ -6,7 +6,7 @@
       <div class="postfooter">
         <div class="time">
           <i class="fa fa-sun-o posttime"></i>
-          <span class="posttime">2019-6-10</span>
+          <span class="posttime">{{item.editTime}}</span>
         </div>
         <div class="tag">
           <i class="fa fa-tags posttag"></i>
@@ -14,51 +14,33 @@
         </div>
       </div>
     </div>
-    <!-- <p v-html="Tagadata">{{Tagadata}}</p> -->
   </div>
 </template>
 
 <script>
 // 首页
-import { fetch } from "../util/service";
+import { getPosts } from "../util/api";
 export default {
   name: "home",
   components: {},
   data() {
     return {
       data: [],
-      Tagadata: ""
+      Tagadata: {}
     };
   },
   created() {
-    this.getData();
-    this.getTags();
+    this.getPostsData();
   },
   methods: {
-    getData() {
-      fetch
-        .get("/posts", {
-          api_access_key: "776eb0f0212c42858cf4abfc2fe1ef2f"
-        })
+    getPostsData() {
+      getPosts()
         .then(res => {
-          console.log(res, 33333);
           this.data = res.data.content;
+          console.log(res, 111);
         })
         .catch(err => {
-          console.log(err);
-        });
-    },
-    getTags() {
-      fetch
-        .get("/posts/5", {
-          api_access_key: "776eb0f0212c42858cf4abfc2fe1ef2f"
-        })
-        .then(res => {
-          console.log(res, 66668988989);
-          this.Tagadata = res.data.originalContent;
-        })
-        .catch(err => {
-          console.log(err);
+          console.log(err, 111);
         });
     }
   }

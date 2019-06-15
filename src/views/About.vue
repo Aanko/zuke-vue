@@ -1,16 +1,16 @@
 <template>
   <div class="about">
-    <img :src="data.avatar">
+    <img :src="userData.avatar">
     <button @click="getData">测试</button>
-    <p>{{data}}</p>
+    <p>{{userData}}</p>
   </div>
 </template>
 <script>
-import { fetch } from "../util/service";
+import { getUserProfile } from "../util/api";
 export default {
   data() {
     return {
-      data: ""
+      userData: ""
     };
   },
   created() {
@@ -18,13 +18,9 @@ export default {
   },
   methods: {
     getData() {
-      fetch
-        .get("/users/profile", {
-          api_access_key: "776eb0f0212c42858cf4abfc2fe1ef2f"
-        })
+      getUserProfile()
         .then(res => {
-          console.log(res, 33333);
-          this.data = res.data;
+          this.userData = res.data;
         })
         .catch(err => {
           console.log(err);
