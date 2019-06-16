@@ -17,3 +17,8 @@ export const getPosts = p => fetch.get("/posts", {
 export const getMenus = p => fetch.get("/menus", {
     api_access_key: api_access_key,
 })
+
+//获取归档数据  (年)
+export const getYears = p => fetch.get("/archives/years", {
+    api_access_key: api_access_key,
+})

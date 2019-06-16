@@ -1,32 +1,32 @@
 <template>
   <div class="archives">
-    <div v-for="(item,index) in data" :key="index">
-      <h2>{{item.year}}</h2>
-      <p v-for="(i,j) in item.posts" :key="j">{{i.title}}</p>
+    <div v-for="(item,index) in yearsData" :key="index" class="archives-content">
+      <p class="archive-year">{{item.year}}</p>
+      <div class="article" v-for="(name,i) in item.posts" :key="i">
+        <p class="archive-title">{{name.title}}</p>
+        <p class="archive-time">{{name.editTime}}</p>
+      </div>
     </div>
   </div>
 </template>
 <script>
 // 归档页面
-import { fetch } from "../util/service";
+import { getYears } from "../utils/api";
 export default {
   data() {
     return {
-      data: []
+      yearsData: []
     };
   },
   created() {
-    this.getData();
+    this.getArchiveData();
   },
   methods: {
-    getData() {
-      fetch
-        .get("/archives/years", {
-          api_access_key: "776eb0f0212c42858cf4abfc2fe1ef2f"
-        })
+    getArchiveData() {
+      getYears()
         .then(res => {
-          console.log(res, 5555);
-          this.data = res.data;
+          console.log(res);
+          this.yearsData = res.data;
         })
         .catch(err => {
           console.log(err);
@@ -37,4 +37,38 @@ export default {
 </script>
 
 <style scoped>
+.archives-content {
+  margin: 1rem;
+  padding: 1rem 0rem;
+}
+.archive-year {
+  font-size: 1.4rem;
+  font-weight: 650;
+}
+.article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.archive-title {
+  font-size: 1rem;
+  margin: 0.5rem 1rem;
+  color: #272727;
+}
+.archive-time {
+  font-size: 1rem;
+  color: #272727;
+}
+@media screen and (max-width: 900px) {
+  .archive-year {
+    font-size: 1rem;
+    font-weight: 650;
+  }
+  .archive-title {
+    font-size: 0.8rem;
+  }
+  .archive-time {
+    font-size: 0.8rem;
+  }
+}
 </style>

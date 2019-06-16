@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import { getUserProfile } from "../util/api";
+import { getUserProfile } from "../utils/api";
 export default {
   data() {
     return {
@@ -14,7 +14,6 @@ export default {
     };
   },
   created() {
-    // this.getData();
   },
   methods: {
     getData() {

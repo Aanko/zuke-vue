@@ -16,7 +16,7 @@
 </template>
 
 <script>
-    import { getUserProfile, getMenus } from "../util/api";
+    import { getUserProfile, getMenus } from "../utils/api";
     export default {
         name: "Menu",
         data() {

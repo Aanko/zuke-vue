@@ -19,7 +19,7 @@
 
 <script>
 // 首页
-import { getPosts } from "../util/api";
+import { getPosts } from "../utils/api";
 export default {
   name: "home",
   components: {},
@@ -47,7 +47,7 @@ export default {
 </script>
 <style scoped>
 .postlist {
-  margin: 1rem 1rem;
+  margin: 1rem;
   padding: 1rem 0rem;
   border-bottom: 0.8px solid #f3f3f3;
 }
