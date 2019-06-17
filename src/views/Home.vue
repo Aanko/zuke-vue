@@ -36,7 +36,6 @@ export default {
       getPosts()
         .then(res => {
           this.postsData = res.data.content;
-          console.log(res, 111);
         })
         .catch(err => {
           console.log(err, 111);

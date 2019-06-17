@@ -21,7 +21,6 @@ export default {
       getPostsDetail(this.$route.query.id)
         .then(res => {
           this.data = res.data.formatContent;
-          console.log(res, 999888);
         })
         .catch(err => {
           console.log(err, 999);
@@ -32,7 +31,7 @@ export default {
 </script>
 
 <style scoped>
-.postsdetail{
-    padding: 1rem;
+.postsdetail {
+  padding: 1rem;
 }
 </style>

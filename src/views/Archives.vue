@@ -25,7 +25,6 @@ export default {
     getArchiveData() {
       getYears()
         .then(res => {
-          console.log(res);
           this.yearsData = res.data;
         })
         .catch(err => {
