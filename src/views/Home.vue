@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div v-for="(item,index) in postsData" :key="index" class="postlist">
-      <a :href="item.url" class="postitle">{{item.title}}</a>
+      <router-link :to="{path:'post/',query:{id:item.id}}" class="postitle">{{item.title}}</router-link>
       <p class="postsummary">{{item.summary}}</p>
       <div class="postfooter">
         <div class="time">

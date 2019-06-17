@@ -13,6 +13,14 @@ export const getPosts = p => fetch.get("/posts", {
     api_access_key: api_access_key,
 })
 
+//获取文章详情
+export const getPostsDetail = p => fetch.get("/posts/" + p, {
+    api_access_key: api_access_key,
+    formatDisabled: false,
+    sourceDisabled: true
+
+})
+
 //获取菜单
 export const getMenus = p => fetch.get("/menus", {
     api_access_key: api_access_key,
