@@ -1,9 +1,5 @@
 <template>
-  <div class="about">
-    <img :src="userData.avatar">
-    <button @click="getData">测试</button>
-    <p>{{userData}}</p>
-  </div>
+  <div class="about">关于</div>
 </template>
 <script>
 import { getUserProfile } from "../utils/api";
@@ -13,8 +9,7 @@ export default {
       userData: ""
     };
   },
-  created() {
-  },
+  created() {},
   methods: {
     getData() {
       getUserProfile()
