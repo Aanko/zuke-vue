@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Archives from './views/Archives.vue'
+import Post from './views/Post.vue'
+import About from './views/About.vue'
+import Links from './views/Links.vue'
 
 Vue.use(Router)
 
@@ -14,24 +18,24 @@ const routes = [
   {
     path: '/archives',
     name: 'Archives',
-    component: () => import('./views/Archives.vue')
+    component: Archives
   },
   {
     path: '/post',
     name: 'Post',
-    component: () => import('./views/Post.vue')
+    component: Post
   },
   {
     path: '/about',
     name: 'About',
-    component: () => import('./views/About.vue')
+    component: About
   },
   {
     path: '/links',
     name: 'Link',
-    component: () => import('./views/Links.vue')
+    component: Links
   },
-] 
+]
 
 export default new Router({
   mode: 'history',

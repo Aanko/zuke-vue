@@ -6,7 +6,7 @@
       <div class="postfooter">
         <div class="time">
           <i class="fa fa-sun-o posttime"></i>
-          <span class="posttime">{{item.editTime}}</span>
+          <span class="posttime">{{fomatDate(item.editTime)}}</span>
         </div>
         <div class="tag">
           <i class="fa fa-tags posttag"></i>
@@ -40,6 +40,19 @@ export default {
         .catch(err => {
           console.log(err, 111);
         });
+    },
+    fomatDate(obj) {
+      var date = new Date(obj);
+      var y = 1900 + date.getYear();
+      var m = "0" + (date.getMonth() + 1);
+      var d = "0" + date.getDate();
+      return (
+        y +
+        "-" +
+        m.substring(m.length - 2, m.length) +
+        "-" +
+        d.substring(d.length - 2, d.length)
+      );
     }
   }
 };
@@ -47,7 +60,7 @@ export default {
 <style scoped>
 .postlist {
   margin: 1rem;
-  padding: 1rem 0rem;
+  padding: 2rem 2rem;
   border-bottom: 0.8px solid #f3f3f3;
 }
 /* .postlist :hover {
