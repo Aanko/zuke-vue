@@ -1,6 +1,6 @@
 import { fetch } from './service'
 
-const api_access_key = "776eb0f0212c42858cf4abfc2fe1ef2f";
+const api_access_key = "28319a788471467fb1633a5aa114c08a";
 
 
 //获取用户信息
