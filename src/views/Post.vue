@@ -1,11 +1,13 @@
 <template>
   <div class="postsdetail">
-    <div v-html="data"></div>
+    <!-- <div v-html="data" class="box"></div> -->
+    <pre><code class="language-css">p { color: red }</code></pre>
   </div>
 </template>
 <script>
 import { getPostsDetail } from "../utils/api";
 import { fetch } from "../utils/service";
+import Prism from 'prismjs';
 export default {
   data() {
     return {
@@ -21,6 +23,7 @@ export default {
       getPostsDetail(this.$route.query.id)
         .then(res => {
           this.data = res.data.formatContent;
+          Prism.highlightAll();
         })
         .catch(err => {
           console.log(err, 999);
@@ -33,5 +36,9 @@ export default {
 <style scoped>
 .postsdetail {
   padding: 1rem;
+}
+.box img {
+  width: 100px;
+  height: 100px;
 }
 </style>

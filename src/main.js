@@ -6,9 +6,12 @@ import './assets/css/common.css'
 import 'font-awesome/css/font-awesome.min.css'
 import './assets/js/common.js'
 import Prism from 'prismjs';
+
 Vue.config.productionTip = false
 
 Vue.use(Prism)
+
+Prism.highlightAll()
 
 new Vue({
   router,

@@ -1507,6 +1507,11 @@ babel-plugin-module-resolver@3.2.0:
     reselect "^3.0.1"
     resolve "^1.4.0"
 
+babel-plugin-prismjs@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/babel-plugin-prismjs/download/babel-plugin-prismjs-1.1.0.tgz#c4791c6b6bce58912f2a5982417b1fadc26293fb"
+  integrity sha1-xHkca2vOWJEvKlmCQXsfrcJik/s=
+
 balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/balanced-match/download/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
