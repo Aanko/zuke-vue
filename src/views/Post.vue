@@ -1,7 +1,6 @@
 <template>
   <div class="postsdetail">
-    <!-- <div v-html="data" class="box"></div> -->
-    <pre><code class="language-css">p { color: red }</code></pre>
+    <div v-html="data" class="box"></div>
   </div>
 </template>
 <script>
